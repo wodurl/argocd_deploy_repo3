@@ -1,0 +1,14 @@
+# argocd_deploy_repo2/hello/charts/fortune/templates/deploy.yaml
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: fortune-svc
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: {{ .Values.service.targetPort }}
+      protocol: TCP
+  selector:
+    app: fortune

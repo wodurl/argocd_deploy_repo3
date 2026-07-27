@@ -1,0 +1,25 @@
+# argocd_deploy_repo2/hello/templates/ingress-rule.yaml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: hello-ingress
+  annotations:
+    kubernetes.io/ingress.class: nginx
+spec:
+  rules:
+    - http:
+        paths:
+          - path: /fortune
+            pathType: Prefix
+            backend:
+              service:
+                name: fortune-svc
+                port:
+                  number: 80
+          - path: /greet
+            pathType: Prefix
+            backend:
+              service:
+                name: greet-svc
+                port:
+                  number: 80

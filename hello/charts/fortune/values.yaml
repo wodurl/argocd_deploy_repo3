@@ -1,0 +1,14 @@
+# argocd_deploy_repo2/hello/charts/fortune/values.yaml
+
+replicaCount: 1
+
+image:
+  # 저장소의 위치는 harbor를 바라보도록 한다
+  repository: 953146141081.dkr.ecr.ap-northeast-2.amazonaws.com/fortune
+  tag: "latest"
+  pullPolicy: Always
+
+service:
+  type: ClusterIP
+  port: 80
+  targetPort: 8000 # FastAPI 포트

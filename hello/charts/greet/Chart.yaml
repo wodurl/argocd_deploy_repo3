@@ -1,0 +1,6 @@
+# argocd_deploy_repo2/hello/Chart.yaml
+apiVersion: v2
+name: greet
+description: A Helm chart for Greet FastAPI microservice
+version: 0.1.0
+appVersion: "1.0.0"

@@ -1,0 +1,16 @@
+# argocd_deploy_repo2/hello/values.yaml
+
+# Jenkins CI/CD 파이프라인에서 빌드 후 이미지 태그를 업데이트하는 영역입니다.
+
+replicaCount: 1
+
+image:
+  # 저장소의 위치는 harbor를 바라보도록 한다
+  repository: 953146141081.dkr.ecr.ap-northeast-2.amazonaws.com/greet
+  tag: "latest"
+  pullPolicy: Always
+
+service:
+  type: ClusterIP
+  port: 80
+  targetPort: 8000 # FastAPI 포트
