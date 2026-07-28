@@ -128,7 +128,7 @@ pipeline {
         //  3. Gitea에 수정된 차트 반영 
         stage('Git Push to Gitea') {
             steps {
-                withCredentials([usernamePassword(credentialsId: GITEA_CRED, passwordVariable: 'GIT_PW', usernameVariable: 'GIT_ID')]) {
+                withCredentials([usernamePassword(credentialsId: GITHUB_CRED, passwordVariable: 'GIT_PW', usernameVariable: 'GIT_ID')]) {
                     sh """
                         git config user.name "Jenkins-CI"
                         git config user.email "jenkins@cicd.local"
