@@ -1,6 +1,8 @@
 // argocd_deploy_repo2/hello/jenkinsfile
 // hello/Jenkinsfile  의 내용 
 
+// hello/Jenkinsfile  의 내용 
+
 pipeline {
     // K8s 일꾼 파드 안에 'kaniko' 컨테이너를 함께 띄우도록 정의합니다.
     agent {
@@ -137,7 +139,7 @@ pipeline {
                         # git diff를 통해 변경된 사항이 있을 때만 commit과 push를 수행합니다. 
                         # (변경 사항이 없는데 commit을 시도하면 Jenkins 파이프라인이 실패 처리됩니다.)
                         git diff-index --quiet HEAD || git commit -m "Update image tags to ${IMAGE_TAG} [ci skip]"
-                        git push http://${GIT_ID}:${GIT_PW}@${GITHUB_REPO} HEAD:master
+                        git push https://${GIT_ID}:${GIT_PW}@${GITHUB_REPO} HEAD:master
                     """
                 }
             }
