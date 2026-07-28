@@ -31,11 +31,11 @@ pipeline {
     }
     // 필요한 환경변수 정의 
     environment {
-        ECR_URL = '401007297971.dkr.ecr.ap-northeast-2.amazonaws.com' //생성한 ecr 의 url
+        ECR_URL = '953146141081.dkr.ecr.ap-northeast-2.amazonaws.com' //생성한 ecr 의 url
         AWS_CRED = 'aws-cred' //jenkins 에 미리 등록한 인증정보
         GITHUB_CRED = 'github-cred' //jenkins 에 미리 등록한 인증정보 
         // 주의: 아래 변수에서 'https://'를 제거해야 나중에 git push URL 조합 시 에러가 나지 않습니다.
-        GITHUB_REPO = 'github.com/oli999/argocd_deploy_repo3.git'
+        GITHUB_REPO = 'github.com/wodurl/argocd_deploy_repo3.git'
         // 빌드번호는 1,2,3,4... 형식으로 증가하는데 그걸 이미지 테그로 사용할 예정 v1,v2,v3,v4...
         IMAGE_TAG = "v${env.BUILD_NUMBER}" 
     }
