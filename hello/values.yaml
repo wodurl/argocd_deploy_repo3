@@ -10,4 +10,4 @@ fortune:
 greet:
   replicaCount: 1
   image:
-    tag: "v2"
+    tag: "v5"
